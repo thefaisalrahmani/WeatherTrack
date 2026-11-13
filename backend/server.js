@@ -4,14 +4,28 @@ require("dotenv").config();
 
 const app = express();
 
+// Allowed frontend origins
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
+// Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
   }),
 );
 
 app.use(express.json());
 
+// Environment variables
 const PORT = process.env.PORT || 5000;
 const API_KEY = process.env.OPENWEATHER_API_KEY;
 
@@ -48,6 +62,10 @@ function getWeatherParams(query) {
 
 // Common OpenWeather API request
 async function fetchWeather(endpoint, params) {
+  if (!API_KEY) {
+    throw new Error("OpenWeather API key is not configured");
+  }
+
   const url = new URL(`${BASE_URL}/${endpoint}`);
 
   url.search = new URLSearchParams({
@@ -111,6 +129,7 @@ app.get("/api/forecast", async (req, res) => {
   }
 });
 
+// Start server
 app.listen(PORT, () => {
   console.log(`WeatherTrack backend running on port ${PORT}`);
 });
