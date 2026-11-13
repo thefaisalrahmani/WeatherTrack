@@ -1,0 +1,162 @@
+
+.RainForecast {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.forecastHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.forecastHeader h3 {
+  margin: 0;
+  color: #172554;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.forecastHeader p {
+  margin: 6px 0 0;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.forecastBadge {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background-color: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dailyForecast {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.dailyRainItem {
+  display: grid;
+  grid-template-columns: minmax(65px, 0.8fr) 75px minmax(70px, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 13px 10px;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  transition: background-color 0.2s ease;
+}
+
+.dailyRainItem:hover {
+  background-color: #eff6ff;
+}
+
+.forecastDayInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dailyDay {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dailyWeatherIcon {
+  font-size: 22px;
+}
+
+.dailyTemperature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.dailyTemperature strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.dailyTemperature span {
+  color: #94a3b8;
+}
+
+.forecastRainInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dailyProgress {
+  flex: 1;
+  min-width: 20px;
+  height: 7px;
+  background-color: #dbeafe;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dailyProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.dailyProbability {
+  min-width: 35px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.dailyRainfall {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 7px;
+  border-top: 1px solid #e2e8f0;
+  color: #3986d8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.forecastEmpty {
+  color: #94a3b8;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .forecastHeader h3 {
+    font-size: 17px;
+  }
+
+  .dailyRainItem {
+    grid-template-columns: 55px 45px minmax(65px, 1fr);
+    gap: 8px;
+    padding: 12px 8px;
+  }
+
+  .dailyTemperature {
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .dailyProbability {
+    min-width: 30px;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,102 @@
+
+.SunInformation {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: left;
+  background-color: #ffffff;
+}
+
+.sunHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.sunHeader h3 {
+  margin: 0;
+  color: #172554;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.sunHeader p {
+  margin: 6px 0 0;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.sunHeaderIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: #fff7ed;
+  font-size: 23px;
+}
+
+.sunDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sunItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 14px;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.sunItem:hover {
+  transform: translateY(-2px);
+  background-color: #fff7ed;
+}
+
+.sunItemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: #ffedd5;
+  font-size: 23px;
+}
+
+.sunItem h4 {
+  margin: 0 0 7px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.sunItem p {
+  margin: 0;
+  color: #1e293b;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sunEmpty {
+  color: #94a3b8;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .sunItem {
+    padding: 14px 12px;
+  }
+
+  .sunItem p {
+    font-size: 16px;
+  }
+}

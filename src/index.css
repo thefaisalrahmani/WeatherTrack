@@ -1,0 +1,37 @@
+
+:root {
+  font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+  color: #1e293b;
+  background-color: #f4f7fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  background-color: #f4f7fc;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
